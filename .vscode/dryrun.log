@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/larissa/SEMB1/lab01'
+arm-none-eabi-gcc -c -c -mcpu=cortex-m4 -mthumb -Wall -O0 startup.c -o startup.o
+arm-none-eabi-gcc -c -c -mcpu=cortex-m4 -mthumb -Wall -O0 main.c -o main.o
+arm-none-eabi-gcc -nostdlib -T stm32f411-rom.ld startup.o main.o -o blinky.elfarm-none-eabi-objcopy 
+blinky.elf -O binary blinky.bin
+make: Leaving directory '/home/larissa/SEMB1/lab01'
+ 
