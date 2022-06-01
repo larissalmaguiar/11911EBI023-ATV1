@@ -12,13 +12,13 @@ Ainda nesse arquivo, definimos os endereços de inicio, final e o tamanho da mem
 ## Endereço de registradores 
 
 No arquivo [main](src/main.c), com base nas informações presentes no datasheet do chip, é possível definir os endereços dos registradores e ajustar o valores de acordo com o necessário para habilitar a porta GPIOC.
-Além disso, as portas do chip também são vistas como um periférico mapeado em memória, possuindo um endereço base e um conjunto de registros de configuração. São esses registros que irão permitir a configuração dos pino. No STM32M411 o led está no pino 13, então realizamos as configurações dele por meio do GPIOC.
+Além disso, as portas do chip também são vistas como um periférico mapeado em memória, possuindo um endereço base e um conjunto de registros de configuração. São esses registros que irão permitir a configuração dos pino. No STM32F411 o led está no pino 13, então realizamos as configurações dele por meio do GPIOC.
 
 
 
 ## LINKER
 
-No arquvio [linker](src/stm32f411-rom.ld) foi gerado um arquivo linker que tem o objetivo juntar o código objeto em um local e gerar um único arquivo executável. Ainda, o principal objetivo do linker script é descrever como as seções dos arquivos objeto de entrada devem ser mapeados e controlar o layout da memória no arquivo de saída.
+O arquvio [linker](src/stm32f411-rom.ld) tem o objetivo juntar o código objeto em um local e gerar um único arquivo executável. Ainda, o principal objetivo do linker script é descrever como as seções dos arquivos objeto de entrada devem ser mapeados e controlar o layout da memória no arquivo de saída.
 
 ## Automatizando a compilação 
 Para compilar o programa de maneira automatica, foi feito um arquivo [Makefile](src/Makefile), de forma que ele é responsável por compilar o [startup](src/startup.c) e [main](src/main.c), chamar o arquivo [linker](src/stm32f411-rom.ld) e gerar o arquivo [BLINK](src/blinky.elfarm-none-eabi-objcopy)
