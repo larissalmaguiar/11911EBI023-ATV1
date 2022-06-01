@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     uint32_t *pGPIOC_OTYPER = (uint32_t *)STM32_GPIOC_OTYPER;
     uint32_t *pGPIOC_PUPDR = (uint32_t *)STM32_GPIOC_PUPDR;
     uint32_t *pGPIOC_BSRR = (uint32_t *)STM32_GPIOC_BSRR;
-    uint32_t LED_DELAY= 5000;
+    uint32_t LED_DELAY= 50000;
     reg = *pRCC_AHB1ENR;
     reg |= RCC_AHB1ENR_GPIOCEN;
     *pRCC_AHB1ENR = reg;
